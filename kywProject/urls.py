@@ -16,7 +16,13 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+import kywApp.views
+from django.conf.urls import include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', kywApp.views.main, name='main'),
+    path('main/', kywApp.views.main, name='main'),
+    path('study/', kywApp.views.study, name='study'),
+    path('introduce/', kywApp.views.introduce, name='introduce'),
 ]
